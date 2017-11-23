@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,6 +33,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="w77-eY-0lT"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZIm-zB-uFY">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.33141052720000003" green="0.40012735129999999" blue="0.46651715040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -47,35 +49,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ot3-Lw-Hcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-279" y="0.0"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="yct-2M-82Q">
-            <objects>
-                <tableViewController id="flB-Hi-dCa" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OpP-en-R8x">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xfl-rT-HAd">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xfl-rT-HAd" id="cfX-lx-sbk">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="flB-Hi-dCa" id="iyJ-qt-d41"/>
-                            <outlet property="delegate" destination="flB-Hi-dCa" id="Dg5-53-VPW"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="s1a-dn-a68"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eMg-gj-jcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2670" y="-743"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="sa6-EW-ftS">
@@ -167,7 +140,7 @@
         <!--Settings-->
         <scene sceneID="62F-ai-Eu6">
             <objects>
-                <navigationController id="s5r-py-QKK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SettingNavigationController" id="s5r-py-QKK" customClass="SettingNavigationController" customModule="AppDictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="iconSetting" id="nUK-Ac-lXw">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBarItem>
@@ -186,7 +159,7 @@
         <!--Favorites-->
         <scene sceneID="SfM-r1-iDd">
             <objects>
-                <navigationController id="LZx-TU-Jyw" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FavoriteNavigationController" id="LZx-TU-Jyw" customClass="FavoriteNavigationController" customModule="AppDictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorites" image="iconStar" id="iCM-wf-dYe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MjJ-tG-LCG">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -203,7 +176,7 @@
         <!--Recents-->
         <scene sceneID="BOd-xu-659">
             <objects>
-                <navigationController id="g5t-Qe-JqR" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RecentNavigationController" id="g5t-Qe-JqR" customClass="RecentNavigationController" customModule="AppDictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Recents" image="iconRecent" id="tjk-5N-U0I"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rgG-k0-1uY">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -220,19 +193,71 @@
         <!--Dictionary-->
         <scene sceneID="UTh-OO-jYd">
             <objects>
-                <navigationController id="ssY-Jq-tQZ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="DictionaryNavigationController" id="ssY-Jq-tQZ" customClass="DictionaryNavigationController" customModule="AppDictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Dictionary" image="iconDictionary" id="yvJ-MB-VX8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Of-sK-mHn">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="flB-Hi-dCa" kind="relationship" relationship="rootViewController" id="SFT-Cz-iiY"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ct-fG-BNM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1537" y="-743"/>
+        </scene>
+        <!--Dictionary View Controller-->
+        <scene sceneID="ZLM-ag-y6j">
+            <objects>
+                <viewController storyboardIdentifier="DictionaryViewController" id="M6l-Gk-Q5C" customClass="DictionaryViewController" customModule="AppDictionary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zps-Zb-JBg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="173-uB-bQe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="M6l-Gk-Q5C" id="JWW-QJ-icU"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ygk-aE-7jz">
+                                <rect key="frame" x="0.0" y="56" width="375" height="611"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="M6l-Gk-Q5C" id="C8I-jk-oGX"/>
+                                    <outlet property="delegate" destination="M6l-Gk-Q5C" id="cr3-qJ-SaD"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hJ8-0S-sLb" firstAttribute="trailing" secondItem="173-uB-bQe" secondAttribute="trailing" id="481-U3-Qzv"/>
+                            <constraint firstItem="173-uB-bQe" firstAttribute="leading" secondItem="hJ8-0S-sLb" secondAttribute="leading" id="PJW-9H-1ch"/>
+                            <constraint firstItem="hJ8-0S-sLb" firstAttribute="top" secondItem="173-uB-bQe" secondAttribute="top" constant="20" id="WzN-hL-5bO"/>
+                            <constraint firstItem="ygk-aE-7jz" firstAttribute="trailing" secondItem="173-uB-bQe" secondAttribute="trailing" id="XrB-oM-ljY"/>
+                            <constraint firstItem="ygk-aE-7jz" firstAttribute="top" secondItem="173-uB-bQe" secondAttribute="bottom" id="fkJ-nT-AdA"/>
+                            <constraint firstItem="hJ8-0S-sLb" firstAttribute="bottom" secondItem="ygk-aE-7jz" secondAttribute="bottom" id="pHB-Bf-EHb"/>
+                            <constraint firstItem="ygk-aE-7jz" firstAttribute="leading" secondItem="173-uB-bQe" secondAttribute="leading" id="yBX-pR-5u9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hJ8-0S-sLb"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBarView" destination="173-uB-bQe" id="DMs-5T-SLg"/>
+                        <outlet property="searchDisplayController" destination="YM3-7x-d8L" id="iSe-2l-Vam"/>
+                        <outlet property="tableView" destination="ygk-aE-7jz" id="yWu-uG-Cj7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lww-vB-Byg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="YM3-7x-d8L">
+                    <connections>
+                        <outlet property="delegate" destination="M6l-Gk-Q5C" id="ScJ-vu-pG2"/>
+                        <outlet property="searchBar" destination="173-uB-bQe" id="Pst-MA-14G"/>
+                        <outlet property="searchContentsController" destination="M6l-Gk-Q5C" id="KSI-c9-ox6"/>
+                        <outlet property="searchResultsDataSource" destination="M6l-Gk-Q5C" id="Scy-R0-Iwx"/>
+                        <outlet property="searchResultsDelegate" destination="M6l-Gk-Q5C" id="iDw-az-4rY"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="2573.5999999999999" y="-743.47826086956525"/>
         </scene>
     </scenes>
     <resources>
